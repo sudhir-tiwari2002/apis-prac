@@ -5,6 +5,7 @@ import { fetchData,postData,deleteData } from './api/client'
 import { getUserUrl } from './api/fetcher/user-fetcher'
 import Add from './components/Add'
 import { v4 as uuidv4 } from 'uuid';
+import Dropdown from './components/Dropdown'
 
 function App() {
   const [userData, setUserData] = useState([] as any)
@@ -45,6 +46,7 @@ useEffect(()=>{
 
 },[userData,addData])
 
+
   return (
     <>
       <div>
@@ -61,6 +63,7 @@ useEffect(()=>{
       <Add  handleClick={addData} btnText={'add'}/>
       <Add handleClick={()=>setPage(page+1)} btnText={'nextpage'}/>
       <Add handleClick={()=>setPage(page-1)} btnText={'previouspage'}/>
+      <Dropdown dropdownOption={userData}/>
        </div>
     </>
   )
