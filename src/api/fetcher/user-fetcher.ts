@@ -1,0 +1,1 @@
+export const getUserUrl = ():string =>{ return `http://localhost:3000/posts`}
